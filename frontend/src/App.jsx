@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// Ini URL backend lokalmu. Nanti saat deploy, kita ganti pakai link Vercel Backend.
-const API_URL = 'http://localhost:3000/todos';
+const API_URL = 'https://tutam-sbd-10-mirza-adi-raffiansyah.vercel.app';
 
 function App() {
   const [todos, setTodos] = useState([]);
