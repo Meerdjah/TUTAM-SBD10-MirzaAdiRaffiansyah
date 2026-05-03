@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@keyframes rgb-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.bg-rgb {
+  background: linear-gradient(
+    to right,
+    #ff0000, #ff7300, #fffb00, #48ff00, 
+    #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+  );
+  background-size: 200% auto;
+  animation: rgb-shift 3s linear infinite;
+}
+
+.text-rgb {
+  background: linear-gradient(
+    to right,
+    #ff0000, #ff7300, #fffb00, #48ff00, 
+    #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+  );
+  background-size: 200% auto;
+  animation: rgb-shift 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-rgb {
+  position: relative;
+}
+
+.border-rgb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 3px;
+  
+  background: linear-gradient(
+    to right,
+    #ff0000, #ff7300, #fffb00, #48ff00, 
+    #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+  );
+  background-size: 200% auto;
+  animation: rgb-shift 3s linear infinite;
+  
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  
+  pointer-events: none; /* Agar border tidak mengganggu klik/ketikan kita */
+}
