@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'https://tutam-sbd-10-mirza-adi-raffiansyah.vercel.app';
+const API_URL = 'https://tutam-sbd-10-mirza-adi-raffiansyah.vercel.app/todos';
 
 function App() {
   const [todos, setTodos] = useState([]);
